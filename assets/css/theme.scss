@@ -12,10 +12,28 @@ body{
 	font-family: "Roboto";
 	padding: 0px;
 	margin: 0px;
+	font-size: 16px !important;
 }
 
 h1,h2,h3,h4,h5,h6{
 	margin: 10px 0 !important;
+}
+
+h2{
+	color: $secondary_color !important;
+	font-weight: bold;
+}
+h3{
+	color: $primary_color !important;
+}
+h4{
+	color: $primary_color !important;
+	font-weight: bold;
+}
+
+p{
+	padding: 0px;
+	margin: 0px;
 }
 
 a{
@@ -27,17 +45,25 @@ a{
 	}
 }
 
-.my-btn-primary{
+.my_btn{
 	background-color: $primary_color;
-	padding: 5px 20px !important;
-	color: white;
+	color: white !important;
 	&:hover, &:focus{
 		background-color: $primary_color_hover;
 		color: white;
 	}
-	&-large{
-		@extend .my-btn-primary;
-		padding: 10px 50px !important;
+	&_primary{
+		@extend .my_btn;
+		padding: 5px 20px !important;
+		&-large{
+			@extend .my_btn_primary;
+			padding: 10px 50px !important;
+		}
+	}
+	&_icon{
+		@extend .my_btn;
+		width: 100% !important;
+		padding: 20px 0 !important;
 	}
 }
 
@@ -54,12 +80,47 @@ a{
 	}
 }
 
-.gap{
-	&-10{
-		padding: 10px 0 !important;
+.normal{
+	font-weight: normal !important;
+}
+
+.bold{
+	font-weight: bold !important;
+}
+
+.italic{
+	font-style: italic !important;
+}
+
+.color{
+	&_primary{
+		background-color: $primary_color !important;
 	}
-	&-20{
-		padding: 20px 0 !important;
+	&_secondary{
+		background-color: $primary_color !important;
+	}
+	&_grey_dark{
+		background-color: $grey_dark !important;
+	}
+	&_grey_light{
+		background-color: $grey_light !important;
+	}
+	&_text{
+		&_primary{
+			color: $primary_color !important;
+		}
+		&_secondary{
+			color: $primary_color !important;
+		}
+		&_grey_dark{
+			color: $grey_dark !important;
+		}
+		&_grey_light{
+			color: $grey_light !important;
+		}
+		&_white{
+			color: white !important;
+		}
 	}
 }
 
@@ -85,6 +146,60 @@ a{
 		color: white !important;
 		&:hover, &:focus{
 			background-color: $primary_color_hover !important;
+		}
+	}
+}
+
+#footer{
+	background: $primary_color;
+	color: white !important;
+	border-top: solid 5px $secondary_color;
+}
+
+#page_home{
+	.section_bio{
+
+	}
+}
+
+@media screen and (max-width: 500px) {
+	body{
+		font-size: 14px !important;
+	}
+	.gap{
+		padding: 5px 0 !important;
+		&-small{
+			padding: 5px 0 !important;
+		}
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+	body{
+		font-size: 15px !important;
+	}
+	.gap{
+		padding: 10px 0 !important;
+		&-small{
+			padding: 6px 0 !important;
+		}
+	}
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+	.gap{
+		padding: 15px 0 !important;
+		&-small{
+			padding: 9px 0 !important;
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.gap{
+		padding: 20px 0 !important;
+		&-small{
+			padding: 12px 0 !important;
 		}
 	}
 }
