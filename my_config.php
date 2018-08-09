@@ -25,5 +25,5 @@ $database = array(
 $GLOBALS['DATABASE'] = $database;
 
 $GLOBALS['maintenance_mode'] 	= FALSE;
-$GLOBALS["ENCRYPTION_KEY"] = "";
+$GLOBALS["ENCRYPTION_KEY"] = "nazish";
 ?>
