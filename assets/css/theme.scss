@@ -1,0 +1,90 @@
+$primary_color: #252839;
+$primary_color_hover: #464a5e;
+$secondary_color: #f2b632;
+$grey_dark : #677077;
+$grey_light: #b5b5b7;
+$grey_background: #eee;
+$red: #d43f3a;
+$orange: #985f0d;
+$green: #255625;
+
+body{
+	font-family: "Roboto";
+	padding: 0px;
+	margin: 0px;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin: 10px 0 !important;
+}
+
+a{
+	text-decoration: none !important;
+	color: $primary_color !important;
+	&:hover, &:focus{
+		text-decoration: none !important;
+		color: $secondary_color !important;
+	}
+}
+
+.my-btn-primary{
+	background-color: $primary_color;
+	padding: 5px 20px !important;
+	color: white;
+	&:hover, &:focus{
+		background-color: $primary_color_hover;
+		color: white;
+	}
+	&-large{
+		@extend .my-btn-primary;
+		padding: 10px 50px !important;
+	}
+}
+
+.dropdown{
+	.dropdown-menu{
+		background-color: $primary_color !important;
+		border-bottom: solid $secondary_color !important;
+		li{
+			padding: 10px !important;
+			&:hover, &:focus{
+				background-color: $primary_color_hover !important;
+			}
+		}
+	}
+}
+
+.gap{
+	&-10{
+		padding: 10px 0 !important;
+	}
+	&-20{
+		padding: 20px 0 !important;
+	}
+}
+
+#header{
+	background-color: $primary_color;
+	nav{
+		margin-bottom: 0 !important;
+		background: $primary_color;
+		border-bottom: solid 5px $secondary_color;
+		.active a{
+			font-weight: bold !important;
+			color: $secondary_color !important;
+			background: $primary_color_hover !important;
+		}
+		.navbar-brand{
+			color: $secondary_color !important;
+		}
+		button{
+			color: $secondary_color !important;
+		}
+	}
+	a{
+		color: white !important;
+		&:hover, &:focus{
+			background-color: $primary_color_hover !important;
+		}
+	}
+}

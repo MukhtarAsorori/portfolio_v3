@@ -1,0 +1,77 @@
+body {
+  font-family: "Roboto";
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 10px 0 !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: #252839 !important;
+}
+a:hover, a:focus {
+  text-decoration: none !important;
+  color: #f2b632 !important;
+}
+
+.my-btn-primary, .my-btn-primary-large {
+  background-color: #252839;
+  padding: 5px 20px !important;
+  color: white;
+}
+.my-btn-primary:hover, .my-btn-primary-large:hover, .my-btn-primary:focus, .my-btn-primary-large:focus {
+  background-color: #464a5e;
+  color: white;
+}
+.my-btn-primary-large {
+  padding: 10px 50px !important;
+}
+
+.dropdown .dropdown-menu {
+  background-color: #252839 !important;
+  border-bottom: solid #f2b632 !important;
+}
+.dropdown .dropdown-menu li {
+  padding: 10px !important;
+}
+.dropdown .dropdown-menu li:hover, .dropdown .dropdown-menu li:focus {
+  background-color: #464a5e !important;
+}
+
+.gap-10 {
+  padding: 10px 0 !important;
+}
+.gap-20 {
+  padding: 20px 0 !important;
+}
+
+#header {
+  background-color: #252839;
+}
+#header nav {
+  margin-bottom: 0 !important;
+  background: #252839;
+  border-bottom: solid 5px #f2b632;
+}
+#header nav .active a {
+  font-weight: bold !important;
+  color: #f2b632 !important;
+  background: #464a5e !important;
+}
+#header nav .navbar-brand {
+  color: #f2b632 !important;
+}
+#header nav button {
+  color: #f2b632 !important;
+}
+#header a {
+  color: white !important;
+}
+#header a:hover, #header a:focus {
+  background-color: #464a5e !important;
+}
+
+/*# sourceMappingURL=assets/css/theme.css.map */
