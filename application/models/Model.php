@@ -22,17 +22,17 @@ class Model extends CI_model{
     public function gets($table_main = "", $params = array(), $filters = array(), $specials = array()){
     	$this->db->from($table_main);
     	switch ($table_main){
-		    case "master_app":
-    			$primary_key = "app_id";
+		    case "menu":
+    			$primary_key = "menu_id";
     			foreach ($params as $table => $param) {
 		            switch ($table) {
 		                case $table_main:
 		                    $this->db->select($param);
 		                    break;
-		                case "master_module":
+		                /*case "master_module":
 		                    $this->db->select($param);
 		                    $this->db->join("master_module", "master_module.app_id = $table_main.$primary_key","left");
-		                    break;
+		                    break;*/
 		            }
 		        }
 		        break;

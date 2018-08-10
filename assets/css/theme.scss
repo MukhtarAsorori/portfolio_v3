@@ -157,8 +157,11 @@ a{
 }
 
 #page_home{
-	.section_bio{
-
+	.section_count{
+		background: $primary_color !important;
+		color: $secondary_color !important;
+		border-top: solid 5px $secondary_color;
+		border-bottom: solid 5px $secondary_color;
 	}
 }
 

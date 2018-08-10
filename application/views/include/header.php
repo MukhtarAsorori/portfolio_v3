@@ -14,28 +14,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    		<nav class="navbar">
 				  	<div class="container">
 				    	<div class="navbar-header">
-				      		<a class="navbar-brand" href="#">Nazish Fraz</a>
+				      		<?php echo anchor('', "Nazish Fraz", "class='navbar-brand'");?>
 				      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-collapse"><i class="fa fa-bars"></i></button>
 				    	</div>
-				    	<div class="collapse navbar-collapse" id="header-collapse">
-					    	<ul class="nav navbar-nav navbar-right">
-					    		<li class="nav-item active">
-					    			<a href="nav-link navbar-menu">About Me</a>
-					    		</li>
-					    		<li class="nav-item">
-					    			<a href="nav-link navbar-menu">Work Experience</a>
-					    		</li>
-					    		<li class="nav-item">
-					    			<a href="nav-link navbar-menu">Projects</a>
-					    		</li>
-					    		<li class="nav-item">
-					    			<a href="nav-link navbar-menu">Certifications</a>
-					    		</li>
-					    		<li class="nav-item">
-					    			<a href="nav-link navbar-menu">Blog</a>
-					    		</li>
-					    	</ul>
-					    </div>
+				    	<?php if($this->menu){?>
+					    	<div class="collapse navbar-collapse" id="header-collapse">
+						    	<ul class="nav navbar-nav navbar-right">
+						    		<?php foreach($this->menu as $menu){?>
+							    		<li class="nav-item <?php echo ($menu['menu_active']) ? 'active' : '';?>">
+							    			<?php echo anchor($menu["menu_url"], $menu["menu_name"]);?>
+							    		</li>
+						    		<?php }?>
+						    	</ul>
+						    </div>
+						<?php }?>
 				  	</div>
 				</nav>
 			</header>

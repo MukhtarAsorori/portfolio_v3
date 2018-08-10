@@ -223,9 +223,6 @@ switch (ENVIRONMENT)
  *  Now that we know the path, set the main path constants
  * -------------------------------------------------------------------
  */
-	// The path to custom config
-	define('CUSTOM_CONFIG', dirname(dirname(str_replace('\\', '/', __FILE__))) . DIRECTORY_SEPARATOR . "my_config");
-
 	// The name of THIS file
 	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
 
@@ -316,6 +313,5 @@ switch (ENVIRONMENT)
  * And away we go...
  */
 // Include the custom config file
-// require_once CUSTOM_CONFIG . DIRECTORY_SEPARATOR . "portfolio_v3_config.php";
 require_once 'my_config.php';
 require_once BASEPATH.'core/CodeIgniter.php';

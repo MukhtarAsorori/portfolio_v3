@@ -139,6 +139,13 @@ a:hover, a:focus {
   border-top: solid 5px #f2b632;
 }
 
+#page_home .section_count {
+  background: #252839 !important;
+  color: #f2b632 !important;
+  border-top: solid 5px #f2b632;
+  border-bottom: solid 5px #f2b632;
+}
+
 @media screen and (max-width: 500px) {
   body {
     font-size: 14px !important;

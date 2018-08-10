@@ -6,23 +6,25 @@
  *
  */
 
-/**
- * Configuration for base URL
- */
-$BASE_URL = "http://localhost/nazish/portfolio_v3";
-$GLOBALS['BASE_URL'] = $BASE_URL;
+$BASE_URL = (ENVIRONMENT == "production") ? "http://nfraz.co.nf" : "http://localhost/nazish/portfolio_v3";
+define('BASE_URL', $BASE_URL);
+
+
 
 /**
  * Configuration for database
  */
-$database = array(
-	'HOSTNAME' 			=> 'localhost',
-	'USERNAME' 			=> 'root',
-	'PASSWORD' 			=> 'root',
-	'DATABASE_NAME' 	=> 'portfolio_v3',
-);
-$GLOBALS['DATABASE'] = $database;
+$HOSTNAME = (ENVIRONMENT == "production") ? "" : "localhost";
+$USERNAME = (ENVIRONMENT == "production") ? "" : "root";
+$PASSWORD = (ENVIRONMENT == "production") ? "" : "root";
+$DATABASE = (ENVIRONMENT == "production") ? "" : "portfolio_v3";
 
-$GLOBALS['maintenance_mode'] 	= FALSE;
-$GLOBALS["ENCRYPTION_KEY"] = "";
+define('HOSTNAME', $HOSTNAME);
+define('USERNAME', $USERNAME);
+define('PASSWORD', $PASSWORD);
+define('DATABASE', $DATABASE);
+
+define('MAINTENANCE_MODE', false);
+define('ENCRYPTION_KEY', '');
+
 ?>
