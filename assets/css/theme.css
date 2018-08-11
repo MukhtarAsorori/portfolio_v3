@@ -67,6 +67,11 @@ a:hover, a:focus {
   background-color: #464a5e !important;
 }
 
+.badge {
+  padding: 5px 10px !important;
+  background: #252839 !important;
+}
+
 .normal {
   font-weight: normal !important;
 }
@@ -139,7 +144,19 @@ a:hover, a:focus {
   border-top: solid 5px #f2b632;
 }
 
-#page_home .section_count {
+.section_bio .my_btn_icon {
+  background: white !important;
+  color: #252839 !important;
+}
+.section_bio .my_btn_icon:hover {
+  color: #464a5e !important;
+}
+.section_bio_short {
+  background: #252839 !important;
+  color: white !important;
+  border-bottom: solid 5px #f2b632;
+}
+.section_count {
   background: #252839 !important;
   color: #f2b632 !important;
   border-top: solid 5px #f2b632;

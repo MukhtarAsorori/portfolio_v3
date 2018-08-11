@@ -2,8 +2,9 @@
 	<div class="gap"></div>
 	<div class="container section_experience">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-12">
 				<h2>Certifications</h2>
+				<p>I partner with startups, organizations and Fortune 500 companies to build digital products that help clients overcome challenges and create lasting connections with millions of people every day.</p>
 			</div>
 		</div>
 	</div>

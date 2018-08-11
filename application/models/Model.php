@@ -36,6 +36,61 @@ class Model extends CI_model{
 		            }
 		        }
 		        break;
+
+            case "social":
+                $primary_key = "social_id";
+                foreach ($params as $table => $param) {
+                    switch ($table) {
+                        case $table_main:
+                            $this->db->select($param);
+                            break;
+                    }
+                }
+                break;
+
+            case "section":
+                $primary_key = "section_id";
+                foreach ($params as $table => $param) {
+                    switch ($table) {
+                        case $table_main:
+                            $this->db->select($param);
+                            break;
+                    }
+                }
+                break;
+
+            case "profile":
+                $primary_key = "profile_id";
+                foreach ($params as $table => $param) {
+                    switch ($table) {
+                        case $table_main:
+                            $this->db->select($param);
+                            break;
+                    }
+                }
+                break;
+
+            case "experience":
+                $primary_key = "experience_id";
+                foreach ($params as $table => $param) {
+                    switch ($table) {
+                        case $table_main:
+                            $this->db->select($param);
+                            break;
+                    }
+                }
+                break;
+
+            case "project":
+                $primary_key = "project_id";
+                foreach ($params as $table => $param) {
+                    switch ($table) {
+                        case $table_main:
+                            $this->db->select($param);
+                            break;
+                    }
+                }
+                break;
     	}
 
         if(array_key_exists('filters_or', $specials)){

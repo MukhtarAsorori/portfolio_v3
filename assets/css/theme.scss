@@ -80,6 +80,11 @@ a{
 	}
 }
 
+.badge{
+	padding: 5px 10px !important;
+	background: $primary_color !important;
+}
+
 .normal{
 	font-weight: normal !important;
 }
@@ -156,8 +161,22 @@ a{
 	border-top: solid 5px $secondary_color;
 }
 
-#page_home{
-	.section_count{
+.section{
+	&_bio{
+		.my_btn_icon{
+			background: white !important;
+			color: $primary_color !important;
+			&:hover{
+				color: $primary_color_hover !important;
+			}
+		}
+	}
+	&_bio_short{
+		background: $primary_color !important;
+		color: white !important;
+		border-bottom: solid 5px $secondary_color;
+	}
+	&_count{
 		background: $primary_color !important;
 		color: $secondary_color !important;
 		border-top: solid 5px $secondary_color;

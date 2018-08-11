@@ -1,28 +1,28 @@
+	<div class="gap"></div>
 	<footer id="footer">
 		<div class="gap"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4">
+				<div class="col-sm-4 col-xs-6">
 					<?php if($this->menu){?>
 						<?php foreach($this->menu as $menu){?>
 							<?php echo anchor($menu["menu_url"], "<i class='fa fa-".$menu["menu_icon"]."'></i>&nbsp; ".$menu["menu_name"], "class='btn-block color_text_white'");?>
 						<?php }?>
 					<?php }?>
 				</div>
-				<div class="col-sm-4">
-					<a href="#" class="btn-block color_text_white"><i class="fa fa-linkedin-square"></i>&nbsp; LinkedIn</a>
-					<a href="#" class="btn-block color_text_white"><i class="fa fa-github-square"></i>&nbsp; Github</a>
-					<a href="#" class="btn-block color_text_white"><i class="fa fa-medium"></i>&nbsp; Medium</a>
-					<a href="#" class="btn-block color_text_white"><i class="fa fa-codepen"></i>&nbsp; Codepen</a>
-					<a href="#" class="btn-block color_text_white"><i class="fa fa-angellist"></i>&nbsp; Angellist</a>
-					<a href="#" class="btn-block color_text_white"><i class="fa fa-quora"></i>&nbsp; Quora</a>
+				<div class="col-sm-4 col-xs-6">
+					<?php if($this->social){?>
+						<?php foreach($this->social as $social){?>
+							<a href="<?php echo $social['social_url'];?>" class="btn-block color_text_white"><i class="fa fa-<?php echo $social['social_icon'];?>"></i>&nbsp; <?php echo $social['social_name'];?></a>
+						<?php }?>
+					<?php }?>
 				</div>
-				<div class="col-sm-4">
-					<a href="#" class="btn-block color_text_white"><i class="fa fa-user-circle"></i>&nbsp; Nazish Fraz</a>
-					<a href="#" class="btn-block color_text_white"><i class="fa fa-code"></i>&nbsp; Full Stack Developer</a>
-					<a href="#" class="btn-block color_text_white"><i class="fa fa-phone-square"></i>&nbsp; 9748277144</a>
-					<a href="#" class="btn-block color_text_white"><i class="fa fa-envelope"></i>&nbsp; nfraz007@gmail.com</a>
-					<a href="#" class="btn-block color_text_white"><i class="fa fa-map-marker"></i>&nbsp; Bengaluru, India</a>
+				<div class="col-sm-4 col-xs-6 hidden-xs">
+					<p class="btn-block"><i class="fa fa-user-circle"></i>&nbsp; <?php echo $this->profile['full_name'];?></p>
+					<p class="btn-block"><i class="fa fa-code"></i>&nbsp; <?php echo $this->profile['designation'];?></p>
+					<p class="btn-block"><i class="fa fa-phone-square"></i>&nbsp; <?php echo $this->profile['phone'];?></p>
+					<p class="btn-block"><i class="fa fa-envelope"></i>&nbsp; <?php echo $this->profile['email'];?></p>
+					<p class="btn-block"><i class="fa fa-map-marker"></i>&nbsp; <?php echo $this->profile['address'];?></p>
 				</div>
 			</div>
 		</div>
