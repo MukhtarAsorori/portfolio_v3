@@ -37,6 +37,10 @@ a:hover, a:focus {
   color: #f2b632 !important;
 }
 
+input:focus, textarea:focus {
+  border: solid 1px #252839 !important;
+}
+
 .my_btn, .my_btn_icon, .my_btn_primary, .my_btn_primary-large {
   background-color: #252839;
   color: white !important;

@@ -8,7 +8,7 @@
 		</div>
 	</div>
 	<div class="gap"></div>
-	<div class="container section_experience">
+	<div class="container">
 		<div class="row">
 			<?php if($certificates){?>
 				<?php foreach($certificates as $key => $certificate){?>

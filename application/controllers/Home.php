@@ -39,6 +39,8 @@ class Home extends MY_Controller {
 	}
 
 	public function contact(){
+		$data = array();
+
 		$this->my_view("contact");
 	}
 }

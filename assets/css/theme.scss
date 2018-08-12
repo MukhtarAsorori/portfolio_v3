@@ -45,6 +45,12 @@ a{
 	}
 }
 
+input, textarea{
+	&:focus{
+		border: solid 1px $primary_color !important;
+	}
+}
+
 .my_btn{
 	background-color: $primary_color;
 	color: white !important;
