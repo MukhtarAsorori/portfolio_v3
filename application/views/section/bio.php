@@ -24,7 +24,7 @@
 					<div class="row">
 						<?php foreach($this->social as $social){?>
 							<div class="col-xs-2">
-								<a href="<?php echo $social['social_url'];?>"><i class="fa fa-<?php echo $social['social_icon'];?> fa-2x my_btn_icon"></i></a>
+								<a href="<?php echo $social['social_url'];?>" target="_blank"><i class="fa fa-<?php echo $social['social_icon'];?> fa-2x my_btn_icon"></i></a>
 							</div>
 						<?php }?>
 					</div>

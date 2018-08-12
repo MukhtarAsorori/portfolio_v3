@@ -80,6 +80,13 @@ a{
 	}
 }
 
+.thumbnail{
+	&:hover{
+		border: solid 1px $primary_color !important;
+		box-shadow: 1px 2px 4px $grey_light;
+	}
+}
+
 .badge{
 	padding: 5px 10px !important;
 	background: $primary_color !important;
@@ -102,7 +109,7 @@ a{
 		background-color: $primary_color !important;
 	}
 	&_secondary{
-		background-color: $primary_color !important;
+		background-color: $secondary_color !important;
 	}
 	&_grey_dark{
 		background-color: $grey_dark !important;
@@ -115,7 +122,7 @@ a{
 			color: $primary_color !important;
 		}
 		&_secondary{
-			color: $primary_color !important;
+			color: $secondary_color !important;
 		}
 		&_grey_dark{
 			color: $grey_dark !important;
@@ -181,6 +188,11 @@ a{
 		color: $secondary_color !important;
 		border-top: solid 5px $secondary_color;
 		border-bottom: solid 5px $secondary_color;
+	}
+	&_certificate{
+		.thumbnail{
+			min-height: 500px !important;
+		}
 	}
 }
 

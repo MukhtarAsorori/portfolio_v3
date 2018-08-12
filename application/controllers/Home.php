@@ -7,6 +7,9 @@ class Home extends MY_Controller {
 		$data = array();
 
 		$data["experiences"] = $this->get_experience(true);
+		$data["educations"] = $this->get_education();
+		$data["achievements"] = $this->get_achievement();
+		$data["count"] = $this->get_count();
 
 		$this->my_view("home", $data);
 	}
@@ -28,7 +31,11 @@ class Home extends MY_Controller {
 	}
 
 	public function certifications(){
-		$this->my_view("certifications");
+		$data = array();
+
+		$data["certificates"] = $this->get_certificate();
+
+		$this->my_view("certifications", $data);
 	}
 
 	public function contact(){

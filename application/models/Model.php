@@ -91,6 +91,39 @@ class Model extends CI_model{
                     }
                 }
                 break;
+
+            case "education":
+                $primary_key = "education_id";
+                foreach ($params as $table => $param) {
+                    switch ($table) {
+                        case $table_main:
+                            $this->db->select($param);
+                            break;
+                    }
+                }
+                break;
+
+            case "achievement":
+                $primary_key = "achievement_id";
+                foreach ($params as $table => $param) {
+                    switch ($table) {
+                        case $table_main:
+                            $this->db->select($param);
+                            break;
+                    }
+                }
+                break;
+
+            case "certificate":
+                $primary_key = "certificate_id";
+                foreach ($params as $table => $param) {
+                    switch ($table) {
+                        case $table_main:
+                            $this->db->select($param);
+                            break;
+                    }
+                }
+                break;
     	}
 
         if(array_key_exists('filters_or', $specials)){

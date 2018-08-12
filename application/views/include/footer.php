@@ -13,7 +13,7 @@
 				<div class="col-sm-4 col-xs-6">
 					<?php if($this->social){?>
 						<?php foreach($this->social as $social){?>
-							<a href="<?php echo $social['social_url'];?>" class="btn-block color_text_white"><i class="fa fa-<?php echo $social['social_icon'];?>"></i>&nbsp; <?php echo $social['social_name'];?></a>
+							<a href="<?php echo $social['social_url'];?>" target="_blank" class="btn-block color_text_white"><i class="fa fa-<?php echo $social['social_icon'];?>"></i>&nbsp; <?php echo $social['social_name'];?></a>
 						<?php }?>
 					<?php }?>
 				</div>

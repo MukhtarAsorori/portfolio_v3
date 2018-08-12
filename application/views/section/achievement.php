@@ -6,25 +6,14 @@
 				<?php $this->load->view("section/section", ["section_value" => "ACHIEVEMENT"]);?>
 			</div>
 			<div class="col-sm-8">
-				<div>
-					<p><i class="fa fa-hand-o-right"></i> 23rd rank global in CodeVita 2016, 1 st round organised by TCS.</p>
-					<hr>
-				</div>
-				<div>
-					<p><i class="fa fa-hand-o-right"></i> 23rd rank global in CodeVita 2016, 1 st round organised by TCS.</p>
-					<hr>
-				</div>
-				<div>
-					<p><i class="fa fa-hand-o-right"></i> 23rd rank global in CodeVita 2016, 1 st round organised by TCS.</p>
-					<hr>
-				</div>
-				<div>
-					<p><i class="fa fa-hand-o-right"></i> 23rd rank global in CodeVita 2016, 1 st round organised by TCS.</p>
-					<hr>
-				</div>
-				<div>
-					<p><i class="fa fa-hand-o-right"></i> 23rd rank global in CodeVita 2016, 1 st round organised by TCS.</p>
-				</div>
+				<?php if($achievements){?>
+					<?php foreach($achievements as $key => $achievement){?>
+						<div>
+							<p><i class="fa fa-hand-o-right"></i> <?php echo $achievement["achievement_name"];?></p>
+							<?php echo ($key+1 < count($achievements)) ? "<hr>" : "";?>
+						</div>
+					<?php }?>
+				<?php }?>
 			</div>
 		</div>
 	</div>

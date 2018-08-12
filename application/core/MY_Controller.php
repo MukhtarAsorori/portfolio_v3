@@ -89,46 +89,150 @@ class MY_Controller extends CI_Controller {
 		$experiences = $this->model->gets("experience", $params, $filters, $specials);
 		foreach($experiences as $key => $experience){
 			if($experience["start_at"]){
-				$experiences[$key]["start_at"] = date(DATE_DEFAULT, strtotime($experience["start_at"]));
+				$experiences[$key]["start_at_text"] = date(DATE_DEFAULT, strtotime($experience["start_at"]));
 			}else{
-				$experiences[$key]["start_at"] = "";
+				$experiences[$key]["start_at_text"] = "";
 			}
 
 			if($experience["end_at"]){
-				$experiences[$key]["end_at"] = date(DATE_DEFAULT, strtotime($experience["end_at"]));
+				$experiences[$key]["end_at_text"] = date(DATE_DEFAULT, strtotime($experience["end_at"]));
 			}else{
-				$experiences[$key]["end_at"] = "Present";
+				$experiences[$key]["end_at_text"] = "Present";
 			}
 
-
+			$experiences[$key]["duration"] = $this->get_duration($experience["start_at"], $experience["end_at"]);
 		}
 		return $experiences;
 	}
 
-	public function get_project($home = false){
+	public function get_project(){
 		$params = []; $filters = []; $specials = [];
 		$params["project"] = ["*"];
 		$filters = ["project_status" => 1];
 		$specials = ["order_by" => "end_at", "order_type" => "desc"];
-		if($home){
-			$specials["limit"] = 2;
-		}
+		
 		$projects = $this->model->gets("project", $params, $filters, $specials);
 		foreach($projects as $key => $project){
 			if($project["start_at"]){
-				$projects[$key]["start_at"] = date(DATE_DEFAULT, strtotime($project["start_at"]));
+				$projects[$key]["start_at_text"] = date(DATE_DEFAULT, strtotime($project["start_at"]));
 			}else{
-				$projects[$key]["start_at"] = "";
+				$projects[$key]["start_at_text"] = "";
 			}
 
 			if($project["end_at"]){
-				$projects[$key]["end_at"] = date(DATE_DEFAULT, strtotime($project["end_at"]));
+				$projects[$key]["end_at_text"] = date(DATE_DEFAULT, strtotime($project["end_at"]));
 			}else{
-				$projects[$key]["end_at"] = "Present";
+				$projects[$key]["end_at_text"] = "Present";
 			}
 
 			$projects[$key]["technology_html"] = "<span class='badge'>".implode("</span> <span class='badge'>", explode(",", $project["technology"]))."</span>";
+
+			$projects[$key]["duration"] = $this->get_duration($project["start_at"], $project["end_at"]);
 		}
 		return $projects;
+	}
+
+	public function get_education(){
+		$params = []; $filters = []; $specials = [];
+		$params["education"] = ["*"];
+		$filters = ["education_status" => 1];
+		$specials = ["order_by" => "year", "order_type" => "desc"];
+		
+		$educations = $this->model->gets("education", $params, $filters, $specials);
+
+		return $educations;
+	}
+
+	public function get_achievement(){
+		$params = []; $filters = []; $specials = [];
+		$params["achievement"] = ["*"];
+		$filters = ["achievement_status" => 1];
+		$specials = ["order_by" => "achievement_order", "order_type" => "asc"];
+
+		$achievements = $this->model->gets("achievement", $params, $filters, $specials);
+		
+		return $achievements;
+	}
+
+	public function get_certificate(){
+		$params = []; $filters = []; $specials = [];
+		$params["certificate"] = ["*"];
+		$filters = ["certificate_status" => 1];
+		$specials = ["order_by" => "issued_at", "order_type" => "desc"];
+		
+		$certificates = $this->model->gets("certificate", $params, $filters, $specials);
+		foreach($certificates as $key => $certificate){
+			if($certificate["issued_at"]){
+				$certificates[$key]["issued_at_text"] = date(DATE_DEFAULT, strtotime($certificate["issued_at"]));
+			}else{
+				$certificates[$key]["issued_at_text"] = "";
+			}
+
+			if($certificate["certificate_image"]){
+				$certificates[$key]["certificate_image_text"] = assets_url("images/certificate/".$certificate["certificate_image"]);
+			}else{
+				$certificates[$key]["certificate_image_text"] = "#";
+			}
+		}
+		return $certificates;
+	}
+
+	public function get_count(){
+		$count = array();
+
+		$count["experience"] = $this->get_total_experience();
+		$count["freelance"] = 3;
+		$count["project_live"] = 9;
+		$count["project"] = count($this->get_project());
+		$count["certificate"] = 10;
+		$count["achievement"] = count($this->get_achievement());
+
+		return $count;
+	}
+
+	public function get_total_experience($date_format = ""){
+		$total_experience_temp = new DateTime("0000-00-00 00:00:00");
+		$total_experience = clone $total_experience_temp;
+
+		$experiences = $this->get_experience();
+
+		foreach($experiences as $experience){
+			$start_at = new DateTime($experience["start_at"]);
+			$end_at = ($experience["end_at"]) ? new DateTime($experience["end_at"]) : new DateTime(date("Y-m-d H:i:s"));
+			
+			$date_diff = $start_at->diff($end_at);
+
+			$total_experience_temp->add($date_diff);
+		}
+
+		$total_experience = $total_experience->diff($total_experience_temp);
+
+		if($date_format){
+			return $total_experience->format($date_format);
+		}else{
+			$total_experience_year = (int)$total_experience->format("%y");
+			$total_experience_month = (int)$total_experience->format("%m");
+
+			return round($total_experience_year + $total_experience_month/12, 1);
+		}
+	}
+
+	public function get_duration($start_at = "", $end_at = ""){
+		$start_at = new DateTime($start_at);
+		$end_at = new DateTime($end_at);
+
+		$date_diff = $start_at->diff($end_at);
+
+		$date_diff_year = (int)$date_diff->format("%y");
+		$date_diff_month = (int)$date_diff->format("%m");
+		$date_diff_day = (int)$date_diff->format("%d");
+
+		$date_diff_text = "";
+
+		if($date_diff_year) $date_diff_text .= $date_diff_year . " yr ";
+		if($date_diff_month) $date_diff_text .= $date_diff_month . " mos ";
+		if($date_diff_day) $date_diff_text .= $date_diff_day . " days ";
+
+		return $date_diff_text;
 	}
 }

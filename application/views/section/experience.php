@@ -11,7 +11,7 @@
 						<div>
 							<h4><?php echo $experience["designation"];?></h4>
 							<h4 class="color_text_grey_dark normal"><?php echo $experience["company_name"];?></h4>
-							<h5 class="color_text_grey_dark"><?php echo $experience["start_at"];?> - <?php echo $experience["end_at"];?> <i class="fa fa-circle"></i> 8 Months</h5>
+							<h5 class="color_text_grey_dark"><?php echo $experience["start_at_text"];?> - <?php echo $experience["end_at_text"];?> <i class="fa fa-circle"></i> <?php echo $experience["duration"];?></h5>
 							<p><?php echo $experience["detail"];?></p>
 							<?php echo ($key+1 < count($experiences)) ? "<hr>" : "";?>
 						</div>

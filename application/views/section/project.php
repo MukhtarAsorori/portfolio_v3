@@ -11,7 +11,7 @@
 						<div>
 							<h4><?php echo $project["project_name"];?></h4>
 							<h4 class="color_text_grey_dark normal">Personal - Library</h4>
-							<h5 class="color_text_grey_dark"><?php echo $project["start_at"];?> - <?php echo $project["end_at"];?> <i class="fa fa-circle"></i> 8 Months</h5>
+							<h5 class="color_text_grey_dark"><?php echo $project["start_at_text"];?> - <?php echo $project["end_at_text"];?> <i class="fa fa-circle"></i> <?php echo $project["duration"];?></h5>
 							<p><?php echo $project["project_detail"];?></p>
 							<h5><?php echo $project["technology_html"];?></h5>
 							<?php echo ($key+1 < count($projects)) ? "<hr>" : "";?>

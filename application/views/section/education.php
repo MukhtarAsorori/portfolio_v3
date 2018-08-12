@@ -6,23 +6,16 @@
 				<?php $this->load->view("section/section", ["section_value" => "EDUCATION"]);?>
 			</div>
 			<div class="col-sm-8">
-				<div>
-					<h4>West Bengal University of Technology</h4>
-					<h5 class="color_text_grey_dark">2013 - 2017</h5>
-					<p>Bachelor of Technology (B.Tech), Information Technology, 7.4</p>
-					<hr>
-				</div>
-				<div>
-					<h4>MK DAV Public School</h4>
-					<h5 class="color_text_grey_dark">2012</h5>
-					<p>12th, CBSE, 68%</p>
-					<hr>
-				</div>
-				<div>
-					<h4>Rotary School</h4>
-					<h5 class="color_text_grey_dark">2010</h5>
-					<p>10th, CBSE, 8.6</p>
-				</div>
+				<?php if($educations){?>
+					<?php foreach($educations as $key => $education){?>
+						<div>
+							<h4><?php echo $education["institute_name"];?></h4>
+							<h5 class="color_text_grey_dark"><?php echo $education["year"];?></h5>
+							<p><?php echo $education["degree"];?>, <?php echo $education["field_of_study"];?>, <?php echo $education["grade"];?></p>
+							<?php echo ($key+1 < count($educations)) ? "<hr>" : "";?>
+						</div>
+					<?php }?>
+				<?php }?>
 			</div>
 		</div>
 	</div>
