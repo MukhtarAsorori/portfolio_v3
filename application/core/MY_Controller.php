@@ -1,8 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+
 // this is core controller
 class MY_Controller extends CI_Controller {
+	public $error = array();
+	public $message = array( "success" => "", "error" => "");
+	
 	public $menu = array();
 	public $social = array();
 	public $profile = array();
@@ -234,5 +239,41 @@ class MY_Controller extends CI_Controller {
 		if($date_diff_day) $date_diff_text .= $date_diff_day . " days ";
 
 		return $date_diff_text;
+	}
+
+	public function get_browser_data(){
+		$data = array();
+
+		$data["browser"] = $this->browser_library->getBrowser();
+		$data["version"] = $this->browser_library->getVersion();
+		$data["platform"] = $this->browser_library->getPlatform();
+		$data["is_mobile"] = $this->browser_library->isMobile();
+		$data["is_tablet"] = $this->browser_library->isTablet();
+		$data["is_robot"] = $this->browser_library->isRobot();
+		$data["is_facebook"] = $this->browser_library->isFacebook();
+		$data["ip"] = $this->get_ip();
+
+		return $data;
+	}
+
+	public function get_ip(){
+		$ipaddress = '';
+
+		if (isset($_SERVER['HTTP_CLIENT_IP']))
+		    $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+		else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+		    $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		else if(isset($_SERVER['HTTP_X_FORWARDED']))
+		    $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+		else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+		    $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+		else if(isset($_SERVER['HTTP_FORWARDED']))
+		    $ipaddress = $_SERVER['HTTP_FORWARDED'];
+		else if(isset($_SERVER['REMOTE_ADDR']))
+		    $ipaddress = $_SERVER['REMOTE_ADDR'];
+		else
+		    $ipaddress = 'UNKNOWN';
+
+		return $ipaddress;
 	}
 }

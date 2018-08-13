@@ -86,6 +86,11 @@ input, textarea{
 	}
 }
 
+.error_message{
+	font-size: 12px !important;
+	color: $red !important;
+}
+
 .thumbnail{
 	&:hover{
 		border: solid 1px $primary_color !important;

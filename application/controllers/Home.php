@@ -40,7 +40,27 @@ class Home extends MY_Controller {
 
 	public function contact(){
 		$data = array();
+		
+		if(isset($_POST["submit"])){
+			$this->form_validation->set_rules('full_name', 'Full Name', 'trim|required|max_length[50]');
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|max_length[50]|valid_email');
+			$this->form_validation->set_rules('phone', 'Phone', 'trim|required|max_length[50]');
+			$this->form_validation->set_rules('message', 'Message', 'trim|required|max_length[1000]');
 
-		$this->my_view("contact");
+			if($this->form_validation->run() == false){
+            	$this->error = $this->form_validation->error_array();
+            }else{
+            	$data_email = array();
+				$data_email["to"] = trim($this->input->post("email", true));
+				$data_email["to_name"] = trim($this->input->post("full_name", true));
+				$data_email["phone"] = trim($this->input->post("phone", true));
+				$data_email["message"] = trim($this->input->post("message", true));
+				$this->email_library->send_email("CONTACT_SUCCESS_USER", $data_email);
+
+				$this->message["success"] = "Thanks for contacting me. I will contact you soon. Please check your inbox / spam.";
+            }
+		}
+		
+		$this->my_view("contact", $data);
 	}
 }

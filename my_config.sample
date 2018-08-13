@@ -27,4 +27,6 @@ define('DATABASE', $DATABASE);
 define('MAINTENANCE_MODE', false);
 define('ENCRYPTION_KEY', '');
 
+define('EMAIL_API', '');
+
 ?>
