@@ -28,6 +28,17 @@
 		</div>
 		<div class="gap"></div>
 	</footer>
+	<footer id="footer_copyright">
+		<div class="gap-small"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<p>Created &amp; Maintained By <?php echo $this->profile["full_name"];?></p>
+				</div>
+			</div>
+		</div>
+		<div class="gap-small"></div>
+	</footer>
 </body>
 </html>
 <?php $this->load->view("include/js");?>

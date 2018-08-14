@@ -9,7 +9,7 @@
 				<?php if($achievements){?>
 					<?php foreach($achievements as $key => $achievement){?>
 						<div>
-							<p><i class="fa fa-hand-o-right"></i> <?php echo $achievement["achievement_name"];?></p>
+							<a href="<?php echo $achievement['achievement_url'];?>" target="_blank"><i class="fa fa-hand-o-right"></i>&nbsp; <?php echo $achievement["achievement_name"];?></a>
 							<?php echo ($key+1 < count($achievements)) ? "<hr>" : "";?>
 						</div>
 					<?php }?>

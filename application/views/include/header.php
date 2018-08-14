@@ -8,6 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <?php $this->load->view("include/css");?>
+            <?php $this->load->view("include/meta");?>
         </head>
         <body>
         	<header id="header">
@@ -21,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					    	<div class="collapse navbar-collapse" id="header-collapse">
 						    	<ul class="nav navbar-nav navbar-right">
 						    		<?php foreach($this->menu as $menu){?>
-							    		<li class="nav-item <?php echo ($menu['menu_active']) ? 'active' : '';?>">
+							    		<li class="nav-item <?php echo ($menu['menu_url'] == $this->menu_current) ? 'active' : '';?>">
 							    			<?php echo anchor($menu["menu_url"], $menu["menu_name"]);?>
 							    		</li>
 						    		<?php }?>

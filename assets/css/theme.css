@@ -76,6 +76,16 @@ input:focus, textarea:focus {
   color: #d43f3a !important;
 }
 
+.alert {
+  color: white !important;
+}
+.alert-danger {
+  background-color: #d43f3a !important;
+}
+.alert-success {
+  background-color: #255625 !important;
+}
+
 .thumbnail:hover {
   border: solid 1px #252839 !important;
   box-shadow: 1px 2px 4px #b5b5b7;
@@ -156,6 +166,10 @@ input:focus, textarea:focus {
   background: #252839;
   color: white !important;
   border-top: solid 5px #f2b632;
+}
+#footer_copyright {
+  background: #f2b632 !important;
+  color: #252839 !important;
 }
 
 .section_bio .my_btn_icon {

@@ -17,6 +17,9 @@
 							<a href="<?php echo $certificate["certificate_image_text"];?>">
 								<img src="<?php echo $certificate["certificate_image_text"];?>" alt="Lights" style="width:100%">
 								<div class="caption">
+									<?php if($certificate['certificate_url']){?>
+										<a href="<?php echo $certificate['certificate_url'];?>" class="btn my_btn pull-right" target="_blank"><i class="fa fa-eye"></i>&nbsp; View</a>
+									<?php }?>
 								  	<p class="color_text_grey_dark"><?php echo $certificate["website"];?></p>
 								  	<h4><?php echo $certificate["certificate_name"];?></h4>
 								  	<p><?php echo $certificate["event"];?></p>

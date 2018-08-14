@@ -7,10 +7,12 @@ require 'vendor/autoload.php';
 class MY_Controller extends CI_Controller {
 	public $error = array();
 	public $message = array( "success" => "", "error" => "");
-	
+
+	public $meta = array();
 	public $menu = array();
 	public $social = array();
 	public $profile = array();
+	public $menu_current = "";
 
 	public function __construct(){
 		parent::__construct();
@@ -19,10 +21,12 @@ class MY_Controller extends CI_Controller {
 		date_default_timezone_set("Asia/Kolkata");
 
 		// init setting
+		$this->set_menu_current();
 		$this->set_menu();
 		$this->set_social();
 		$this->set_section();
 		$this->set_profile();
+		$this->set_meta();
 	}
 
 	public function my_view($view_file = "", $data = array()){
@@ -35,19 +39,54 @@ class MY_Controller extends CI_Controller {
 		$this->load->view("include/footer", $data);
 	}
 
+	public function set_meta(){
+		$description = "";
+		$keywords = "";
+		$common = [ $this->profile["first_name"], $this->profile["last_name"], $this->profile["full_name"] ];
+
+		switch($this->menu_current){
+			case "about-me":
+				$description = $this->profile["profile_detail"];
+				$keywords = implode(",", array_merge($common, [ $this->profile["designation"], $this->profile["website"], $this->profile["city"], $this->profile["country"] ]));
+				break;
+
+			case "work-experience":
+				$description = $this->section["EXPERIENCE"]["section_detail"];
+				$keywords = implode(",", array_merge($common, array_column($this->get_experience(), "company_name")));
+				break;
+
+			case "projects":
+				$description = $this->section["PROJECT"]["section_detail"];
+				$keywords = implode(",", array_merge($common, array_column($this->get_project(), "project_name")));
+				break;
+
+			case "certifications":
+				$description = $this->section["CERTIFICATE"]["section_detail"];
+				$keywords = implode(",", array_merge($common, array_column($this->get_certificate(), "certificate_name")));
+				break;
+
+			case "contact":
+				$description = $this->section["CONTACT"]["section_detail"];
+				$keywords = implode(",", array_merge($common, [ $this->profile["designation"], $this->profile["website"], $this->profile["phone"], $this->profile["email"] ]));
+				break;
+		}
+
+		$this->meta["author"] = $this->profile["full_name"];
+		$this->meta["keywords"] = $keywords;
+		$this->meta["description"] = $description;
+	}
+
+	public function set_menu_current(){
+		$uri_current = uri_string(1);
+		$this->menu_current = ($uri_current) ? $uri_current : "about-me";
+	}
+
 	public function set_menu(){
 		$params = []; $filters = []; $specials = [];
 		$params["menu"] = ["*"];
 		$filters = ["menu_status" => 1];
 		$specials = ["order_by" => "menu_order", "order_type" => "asc"];
-		$menus = $this->model->gets("menu", $params, $filters, $specials);
-
-		foreach($menus as $menu){
-			$data = $menu;
-			$data["menu_active"] = (uri_string() == $menu["menu_url"]) ? true : false;
-
-			$this->menu[] = $data;
-		}
+		$this->menu = $this->model->gets("menu", $params, $filters, $specials);
 	}
 
 	public function set_social(){

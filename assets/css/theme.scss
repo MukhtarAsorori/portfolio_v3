@@ -91,6 +91,16 @@ input, textarea{
 	color: $red !important;
 }
 
+.alert{
+	color: white !important;
+	&-danger{
+		background-color: $red !important;
+	}
+	&-success{
+		background-color: $green !important;
+	}
+}
+
 .thumbnail{
 	&:hover{
 		border: solid 1px $primary_color !important;
@@ -177,6 +187,10 @@ input, textarea{
 	background: $primary_color;
 	color: white !important;
 	border-top: solid 5px $secondary_color;
+	&_copyright{
+		background: $secondary_color !important;
+		color: $primary_color !important;
+	}
 }
 
 .section{
