@@ -6,9 +6,14 @@ class Model extends CI_model{
         parent::__construct();
     }
 
+    // this will add prefix in the table
+    public function prefix($table = ""){
+        return PREFIX.$table;
+    }
+
     // this function is for update the table
     public function update($table_main = "", $params = array(), $filters = array()){
-    	return $this->db->where($filters)->update($table_main, $params);
+    	return $this->db->where($filters)->update($this->prefix($table_main), $params);
     }
 
     // this function is for geting single data within the table
@@ -20,7 +25,7 @@ class Model extends CI_model{
 
     // this function is for getting multiple data within any table
     public function gets($table_main = "", $params = array(), $filters = array(), $specials = array()){
-    	$this->db->from($table_main);
+    	$this->db->from($this->prefix($table_main));
     	switch ($table_main){
 		    case "menu":
     			$primary_key = "menu_id";

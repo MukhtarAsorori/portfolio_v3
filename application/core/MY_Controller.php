@@ -120,6 +120,12 @@ class MY_Controller extends CI_Controller {
 		$this->profile["address"] = implode(", ", [$this->profile["city"], $this->profile["country"]]);
 		$this->profile["phone_text"] = implode(", ", [$this->profile["phone"], $this->profile["phone_alt"]]);
 		$this->profile["email_text"] = implode(", ", [$this->profile["email"], $this->profile["email_alt"]]);
+
+		if($this->profile["resume_url"]){
+			$this->profile["resume_url_text"] = downloads_url($this->profile["resume_url"]);
+		}else{
+			$this->profile["resume_url_text"] = "";
+		}
 	}
 
 	public function get_experience($home = false){

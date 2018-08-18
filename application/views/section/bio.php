@@ -29,6 +29,10 @@
 						<?php }?>
 					</div>
 				<?php }?>
+				<?php if($this->profile){?>
+					<a href="<?php echo $this->profile['resume_url_text'];?>" class="btn my_btn" download><i class="fa fa-download"></i>&nbsp; Download Resume</a>
+					<a href="<?php echo $this->profile['resume_url_text'];?>" class="btn my_btn" target="_blank"><i class="fa fa-eye"></i>&nbsp; View Resume</a>
+				<?php }?>
 			</div>
 			<div class="col-sm-6 hidden-xs">
 				<img src="<?php echo asset_url();?>/images/myphoto.jpg" alt="" class="img-responsive pull-right">

@@ -5,8 +5,12 @@
  * --------------------------------------------------------------------
  *
  */
+// configure enviroment / set true if it is in live server
+$PRODUCTION = false;
+define('PRODUCTION', $PRODUCTION);
 
-$BASE_URL = (ENVIRONMENT == "production") ? "http://nfraz.co.nf" : "http://localhost/nazish/portfolio_v3";
+$BASE_URL = (PRODUCTION) ? "http://nfraz.co.nf" : "http://localhost/nazish/portfolio_v3";
+
 define('BASE_URL', $BASE_URL);
 
 
@@ -14,19 +18,22 @@ define('BASE_URL', $BASE_URL);
 /**
  * Configuration for database
  */
-$HOSTNAME = (ENVIRONMENT == "production") ? "" : "localhost";
-$USERNAME = (ENVIRONMENT == "production") ? "" : "root";
-$PASSWORD = (ENVIRONMENT == "production") ? "" : "root";
-$DATABASE = (ENVIRONMENT == "production") ? "" : "portfolio_v3";
+$HOSTNAME = (PRODUCTION) ? "" : "localhost";
+$USERNAME = (PRODUCTION) ? "" : "root";
+$PASSWORD = (PRODUCTION) ? "" : "root";
+$DATABASE = (PRODUCTION) ? "" : "portfolio_v3";
+$PREFIX   = (PRODUCTION) ? "" : "";
 
 define('HOSTNAME', $HOSTNAME);
 define('USERNAME', $USERNAME);
 define('PASSWORD', $PASSWORD);
 define('DATABASE', $DATABASE);
+define('PREFIX'  , $PREFIX);
 
 define('MAINTENANCE_MODE', false);
 define('ENCRYPTION_KEY', '');
 
 define('EMAIL_API', '');
+
 
 ?>
