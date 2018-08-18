@@ -6,7 +6,7 @@
 				<h2><span class="normal">I am</span> <?php echo $this->profile["full_name"];?></h2>
 				<h3><?php echo $this->profile["designation"];?></h3>
 				<div class="gap-small"></div>
-				<p>I am a Web Developer located in Hartford, Connecticut. I currently work as a part time Remote Junior Web Developer for Coolor, located in Las Vegas. I am looking to take on more work and to increase my skills as a Web Developer.</p>
+				<p><?php echo $this->profile["profile_detail"];?></p>
 				<div class="gap-small"></div>
 				<div class="row">
 					<div class="col-xs-3">
@@ -35,7 +35,7 @@
 				<?php }?>
 			</div>
 			<div class="col-sm-6 hidden-xs">
-				<img src="<?php echo asset_url();?>/images/myphoto.jpg" alt="" class="img-responsive pull-right">
+				<img src="<?php echo asset_url();?>/images/myphoto.jpg" alt="<?php echo $this->profile["full_name"];?>" class="img-responsive pull-right">
 			</div>
 		</div>
 	</div>
