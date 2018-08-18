@@ -18,21 +18,21 @@
 					<div class="form-group <?php echo isset($this->error['full_name']) ? "has-error" : ''?>">
 						<?php echo form_label('Full Name :', 'full_name'); ?>
 						<?php echo form_input('full_name', set_value("full_name"), [ 'class' =>	"form-control", 'id' =>	"full_name", 'placeholder'	=>	"Enter your Full Name", 'required' => true ]); ?>
-						<span class="error_message"><?php echo $this->error["full_name"] ?? ''?></span>
+						<span class="error_message"><?php echo (isset($this->error["full_name"])) ? $this->error["full_name"] : ''?></span>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="form-group <?php echo isset($this->error['email']) ? "has-error" : ''?>">
 						<?php echo form_label('Email :', 'email'); ?>
 						<?php echo form_input('email', set_value("email"), [ 'class' =>	"form-control", 'id' =>	"email", 'placeholder'	=>	"Enter your Email", 'required' => true ]); ?>
-						<span class="error_message"><?php echo $this->error["email"] ?? ''?></span>
+						<span class="error_message"><?php echo (isset($this->error["email"])) ? $this->error["email"] : ''?></span>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="form-group <?php echo isset($this->error['phone']) ? "has-error" : ''?>">
 						<?php echo form_label('Phone :', 'phone'); ?>
 						<?php echo form_input('phone', set_value("phone"), [ 'class' =>	"form-control", 'id' =>	"phone", 'placeholder'	=>	"Enter your Phone", 'required' => true ]); ?>
-						<span class="error_message"><?php echo $this->error["phone"] ?? ''?></span>
+						<span class="error_message"><?php echo (isset($this->error["phone"])) ? $this->error["phone"] : ''?></span>
 					</div>
 				</div>
 			</div>
@@ -41,7 +41,7 @@
 					<div class="form-group <?php echo isset($this->error['message']) ? "has-error" : ''?>">
 					  	<?php echo form_label('Message :', 'mssage'); ?>
 						<?php echo form_textarea('message', set_value("message"), [ 'class'	=>	"form-control", 'id' =>	"message", 'placeholder' =>	"Enter your Message", 'required' => true, 'rows' => "5" ]); ?>
-						<span class="error_message"><?php echo $this->error["message"] ?? ''?></span>
+						<span class="error_message"><?php echo (isset($this->error["message"])) ? $this->error["message"] : ''?></span>
 					</div>
 				</div>
 			</div>

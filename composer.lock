@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d68b48e77d87786c4242513847aa515c",
-    "content-hash": "476e31e707907434aa7c55b8d8e6be34",
+    "hash": "77335a0c34b595e633b18fea563960e5",
+    "content-hash": "89acb29d38797cb903745040d58f6898",
     "packages": [
         {
             "name": "sendgrid/php-http-client",
@@ -61,16 +61,16 @@
         },
         {
             "name": "sendgrid/sendgrid",
-            "version": "7.0.0",
+            "version": "7.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sendgrid/sendgrid-php.git",
-                "reference": "b659d96f19f69bcef6807300f88ac7a1b2449328"
+                "reference": "7a9b54f96e170272403d1d7c6c4a70a432967899"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/b659d96f19f69bcef6807300f88ac7a1b2449328",
-                "reference": "b659d96f19f69bcef6807300f88ac7a1b2449328",
+                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/7a9b54f96e170272403d1d7c6c4a70a432967899",
+                "reference": "7a9b54f96e170272403d1d7c6c4a70a432967899",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
                 "send",
                 "sendgrid"
             ],
-            "time": "2018-05-19 16:38:14"
+            "time": "2018-08-15 23:20:28"
         }
     ],
     "packages-dev": [
