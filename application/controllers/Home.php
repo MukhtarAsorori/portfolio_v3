@@ -59,7 +59,12 @@ class Home extends MY_Controller {
 					$this->email_library->send_email("CONTACT_SUCCESS_USER", $data_email);
 
 					$this->message["success"] = "Thanks for contacting me. I will contact you soon. Please check your inbox / spam.";
-					$this->input->set_cookie("portfolio_v3_contact_form", true, 60*60*24);
+					
+					try{
+						$this->input->set_cookie("portfolio_v3_contact_form", true, 60*60*24);
+					}catch(Exception $e){
+
+					}
 				}else{
 					$this->message["error"] = "You have already submitted form, Please try after 24 hours.";
 				}
