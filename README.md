@@ -16,4 +16,7 @@ Full Documentation [https://nfraz007.github.io/portfolio_v3/](https://nfraz007.g
 * Open any browser any type **localhost/phpmyadmin** in the URL
 * Create a new database **portfolio_v3** or whatever you want
 * Select this database and click on **import** section. select this file : **C://xampp/htdocs/blood_bank/sql/portfolio_v3.sql**, and hit OK. It will create all the relevant table for this project.
+* create a new file in project directory, name as my_config.php
+* copy then content from my_config.sample and paste in newly created my_config.php file
+* fill the configration according to your requirement.
 * Now everything is set. Open your browser any type this : **localhost/portfolio_v3**
