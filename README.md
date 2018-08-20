@@ -6,7 +6,7 @@ Full Documentation [https://nfraz007.github.io/portfolio_v3/](https://nfraz007.g
 
 # Technologies: 
 * front-end : HTML, CSS, SASS, JavaScript, Jquery, Bootstrap 
-* back-end : Laravel, PHP, Mysqli, JSON
+* back-end : Codeigniter, PHP, Mysqli, JSON
 * Software : Xampp (or any local server), Any browser
 
 # Setup and Installation
