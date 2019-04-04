@@ -9,17 +9,17 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<h4>Front End</h4>
-						<p>HTML, CSS, Javascript, Jquery, Ajax, JSON, Bootstrap, Materialize, W3css</p>
+						<p>Vue JS, React JS, Angular JS, Javascript, Jquery, Ajax, JSON, HTML, CSS, SCSS, Bootstrap, Materialize, W3css</p>
 						<div class="gap-small"></div>
 					</div>
 					<div class="col-sm-6">
 						<h4>Back End</h4>
-						<p>PHP, Mysql, Codeigniter, Laravel, Opencart, Wordpress, Lumen, Slim</p>
+						<p>PHP, Codeigniter, Laravel, Node JS, Express JS, Mysql, Mongo DB, Opencart, Wordpress, Lumen, Slim</p>
 						<div class="gap-small"></div>
 					</div>
 					<div class="col-sm-6">
 						<h4>Extra</h4>
-						<p>C, C++, Java, Android, Python, MVC, GIT, Visual studio 4, AWS</p>
+						<p>Docker, AWS, Firebase, GIT, MVC, C, C++, Java, Android, Python, Visual studio 4</p>
 						<div class="gap-small"></div>
 					</div>
 				</div>
