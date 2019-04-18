@@ -25,7 +25,7 @@ class Model extends CI_model{
 
     // this function is for getting multiple data within any table
     public function gets($table_main = "", $params = array(), $filters = array(), $specials = array()){
-    	$this->db->from($this->prefix($table_main));
+    	$this->db->from($this->prefix($table_main)." as ".$table_main);
     	switch ($table_main){
 		    case "menu":
     			$primary_key = "menu_id";
@@ -92,6 +92,10 @@ class Model extends CI_model{
                     switch ($table) {
                         case $table_main:
                             $this->db->select($param);
+                            break;
+                        case "experience":
+                            $this->db->select($param);
+                            $this->db->join($this->prefix("experience")." as experience", "experience.experience_id = $table_main.experience_id","left");
                             break;
                     }
                 }

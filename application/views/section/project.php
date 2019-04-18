@@ -10,6 +10,7 @@
 					<?php foreach($projects as $key => $project){?>
 						<div>
 							<h4><?php echo $project["project_name"];?></h4>
+							<h4 class="color_text_grey_dark normal"><?php echo ($project["project_type"] != "COMPANY") ? ucwords(strtolower($project["project_type"])) : $project["company_name"];?></h4>
 							<h5 class="color_text_grey_dark"><?php echo $project["start_at_text"];?> - <?php echo $project["end_at_text"];?> <i class="fa fa-circle"></i> <?php echo $project["duration"];?></h5>
 							<p><?php echo $project["project_detail"];?></p>
 							<h5><?php echo $project["technology_html"];?></h5>

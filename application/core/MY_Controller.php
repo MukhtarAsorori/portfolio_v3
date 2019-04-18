@@ -166,11 +166,13 @@ class MY_Controller extends CI_Controller {
 		return $experiences;
 	}
 
-	public function get_project(){
+	public function get_project($project_type = ""){
 		$params = []; $filters = []; $specials = [];
-		$params["project"] = ["*"];
+		$params["project"] = ["project.*"];
+		$params["experience"] = ["company_name"];
 		$filters = ["project_status" => 1];
-		$specials = ["order_by" => "end_at", "order_type" => "desc"];
+		if($project_type) $filters["project.project_type"] = $project_type;
+		$specials = ["order_by" => "project.start_at", "order_type" => "desc"];
 		
 		$projects = $this->model->gets("project", $params, $filters, $specials);
 		foreach($projects as $key => $project){
@@ -242,9 +244,9 @@ class MY_Controller extends CI_Controller {
 		$count = array();
 
 		$count["experience"] = $this->get_total_experience();
-		$count["freelance"] = 3;
-		$count["project_live"] = 9;
-		$count["project"] = count($this->get_project());
+		$count["freelance"] = count($this->get_project("FREELANCE"));
+		$count["project_live"] = count($this->get_project("COMPANY"));
+		$count["project"] = count($this->get_project("PERSONAL"));
 		$count["certificate"] = 10;
 		$count["achievement"] = count($this->get_achievement());
 
