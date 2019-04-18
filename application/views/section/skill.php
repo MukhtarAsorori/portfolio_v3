@@ -7,21 +7,15 @@
 			</div>
 			<div class="col-sm-8">
 				<div class="row">
-					<div class="col-sm-6">
-						<h4>Front End</h4>
-						<p>Vue JS, React JS, Angular JS, Javascript, Jquery, Ajax, JSON, HTML, CSS, SCSS, Bootstrap, Materialize, W3css</p>
-						<div class="gap-small"></div>
-					</div>
-					<div class="col-sm-6">
-						<h4>Back End</h4>
-						<p>PHP, Codeigniter, Laravel, Node JS, Express JS, Mysql, Mongo DB, Opencart, Wordpress, Lumen, Slim</p>
-						<div class="gap-small"></div>
-					</div>
-					<div class="col-sm-6">
-						<h4>Extra</h4>
-						<p>Docker, AWS, Firebase, GIT, MVC, C, C++, Java, Android, Python, Visual studio 4</p>
-						<div class="gap-small"></div>
-					</div>
+					<?php if($skills){?>
+						<?php foreach($skills as $key => $skill){?>
+							<div class="col-sm-6">
+								<h4><?php echo ucwords(strtolower($skill["skill_type"]));?></h4>
+								<p><?php echo $skill["skill"];?></p>
+								<div class="gap-small"></div>
+							</div>
+						<?php }?>
+					<?php }?>
 				</div>
 			</div>
 		</div>

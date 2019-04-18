@@ -406,3 +406,9 @@ ALTER TABLE `nf3_section`
 --
 ALTER TABLE `nf3_social`
   MODIFY `social_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+-- version_2 migration
+CREATE TABLE `nf3_skill` ( `skill_id` INT NOT NULL AUTO_INCREMENT , `skill_type` VARCHAR(50) NOT NULL COMMENT 'FRONTEND,BACKEND,EXTRA' , `skill` VARCHAR(500) NOT NULL COMMENT 'comma seperated skill' , `skill_status` INT NOT NULL , `skill_order` DECIMAL NOT NULL , PRIMARY KEY (`skill_id`)) ENGINE = InnoDB;
+INSERT INTO `nf3_skill` (`skill_id`, `skill_type`, `skill`, `skill_status`, `skill_order`) VALUES (NULL, 'FRONTEND', 'Vue JS, React JS, Angular JS, Javascript, Jquery, Ajax, JSON, HTML, CSS, SCSS, Bootstrap, Materialize, W3css', '1', '1'), (NULL, 'BACKEND', 'PHP, Codeigniter, Laravel, Node JS, Express JS, Mysql, Mongo DB, Opencart, Wordpress, Lumen, Slim', '1', '2');
+INSERT INTO `nf3_skill` (`skill_id`, `skill_type`, `skill`, `skill_status`, `skill_order`) VALUES (NULL, 'EXTRA', 'Docker, AWS, Firebase, GIT, MVC, C, C++, Java, Android, Python, Visual studio 4', '1', '3');
+

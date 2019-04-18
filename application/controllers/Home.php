@@ -6,6 +6,7 @@ class Home extends MY_Controller {
 	public function index(){
 		$data = array();
 
+		$data["skills"] = $this->get_skill();
 		$data["experiences"] = $this->get_experience(true);
 		$data["educations"] = $this->get_education();
 		$data["achievements"] = $this->get_achievement();

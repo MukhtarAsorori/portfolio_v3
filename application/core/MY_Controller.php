@@ -128,6 +128,17 @@ class MY_Controller extends CI_Controller {
 		}
 	}
 
+	public function get_skill(){
+		$params = []; $filters = []; $specials = [];
+		$params["skill"] = ["*"];
+		$filters = ["skill_status" => 1];
+		$specials = ["order_by" => "skill_order", "order_type" => "asc"];
+		
+		$skills = $this->model->gets("skill", $params, $filters, $specials);
+		
+		return $skills;
+	}
+
 	public function get_experience($home = false){
 		$params = []; $filters = []; $specials = [];
 		$params["experience"] = ["*"];
