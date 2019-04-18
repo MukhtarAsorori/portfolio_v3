@@ -9,7 +9,7 @@
 $PRODUCTION = false;
 define('PRODUCTION', $PRODUCTION);
 
-$BASE_URL = (PRODUCTION) ? "http://nfraz.co.nf" : "http://localhost/nazish/portfolio_v3";
+$BASE_URL = (PRODUCTION) ? "http://nfraz.co.nf" : "http://localhost/nazish/personal/portfolio_v3";
 
 define('BASE_URL', $BASE_URL);
 
