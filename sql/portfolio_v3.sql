@@ -408,9 +408,11 @@ ALTER TABLE `nf3_social`
   MODIFY `social_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 -- version_2 migration
+INSERT INTO `nf3_project` (`project_id`, `experience_id`, `project_type`, `project_name`, `project_icon`, `project_image`, `project_demo`, `project_url`, `project_detail`, `technology`, `start_at`, `end_at`, `project_status`, `created_at`) VALUES (NULL, NULL, 'PERSONAL', 'Dinars Inventory', '', '', 'https://www.youtube.com/watch?v=VMX84p3mpaQ&t=72s', '', 'This is a inventory and billing software made in laravel. A Parent company can create multiple child complany and see the order and payment flow done by child company. Parent will transfer stock to the child company. Child company will sell all this product to their customer. They can generate invoice, download reports and lots of thing.', 'Laravel,Mysql,HTML,SASS,Bootstrap,Jquery,Ajax', '2018-08-01 12:00:00', '2018-10-05 12:00:00', '1', '2018-12-02 00:00:00')
+
 CREATE TABLE `nf3_skill` ( `skill_id` INT NOT NULL AUTO_INCREMENT , `skill_type` VARCHAR(50) NOT NULL COMMENT 'FRONTEND,BACKEND,EXTRA' , `skill` VARCHAR(500) NOT NULL COMMENT 'comma seperated skill' , `skill_status` INT NOT NULL , `skill_order` DECIMAL NOT NULL , PRIMARY KEY (`skill_id`)) ENGINE = InnoDB;
 INSERT INTO `nf3_skill` (`skill_id`, `skill_type`, `skill`, `skill_status`, `skill_order`) VALUES (NULL, 'FRONTEND', 'Vue JS, React JS, Angular JS, Javascript, Jquery, Ajax, JSON, HTML, CSS, SCSS, Bootstrap, Materialize, W3css', '1', '1'), (NULL, 'BACKEND', 'PHP, Codeigniter, Laravel, Node JS, Express JS, Mysql, Mongo DB, Opencart, Wordpress, Lumen, Slim', '1', '2');
-INSERT INTO `nf3_skill` (`skill_id`, `skill_type`, `skill`, `skill_status`, `skill_order`) VALUES (NULL, 'EXTRA', 'Docker, AWS, Firebase, GIT, MVC, C, C++, Java, Android, Python, Visual studio 4', '1', '3');
+INSERT INTO `nf3_skill` (`skill_id`, `skill_type`, `skill`, `skill_status`, `skill_order`) VALUES (NULL, 'EXTRA', 'Docker, AWS, Firebase, GIT, MVC, OOP, C, C++, Java, Android, Python, Visual studio 4', '1', '3');
 
 ALTER TABLE `nf3_project` ADD `project_type` VARCHAR(50) NULL DEFAULT 'PERSONAL' COMMENT 'PERSONAL,FREELANCE,COMPANY' AFTER `project_id`;
 
