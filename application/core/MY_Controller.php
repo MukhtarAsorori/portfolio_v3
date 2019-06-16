@@ -247,7 +247,7 @@ class MY_Controller extends CI_Controller {
 		$count["freelance"] = count($this->get_project("FREELANCE"));
 		$count["project_live"] = count($this->get_project("COMPANY"));
 		$count["project"] = count($this->get_project("PERSONAL"));
-		$count["certificate"] = 10;
+		$count["certificate"] = count($this->get_certificate());
 		$count["achievement"] = count($this->get_achievement());
 
 		return $count;
