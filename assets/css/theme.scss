@@ -51,6 +51,17 @@ input, textarea{
 	}
 }
 
+label[class='error']{
+	color: $red !important;
+	font-size: 14px;
+}
+
+input, textarea {
+	&[class~='error'] {
+		border: solid 1px $red !important;
+	}
+}
+
 .my_btn{
 	background-color: $primary_color;
 	color: white !important;

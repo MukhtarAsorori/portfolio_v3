@@ -41,6 +41,15 @@ input:focus, textarea:focus {
   border: solid 1px #252839 !important;
 }
 
+label[class=error] {
+  color: #d43f3a !important;
+  font-size: 14px;
+}
+
+input[class~=error], textarea[class~=error] {
+  border: solid 1px #d43f3a !important;
+}
+
 .my_btn, .my_btn_icon, .my_btn_primary, .my_btn_primary-large {
   background-color: #252839;
   color: white !important;

@@ -41,7 +41,6 @@
 	</footer>
 </body>
 </html>
-<?php $this->load->view("include/js");?>
 <script type="text/javascript">
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 

@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <?php $this->load->view("include/css");?>
             <?php $this->load->view("include/meta");?>
+			<?php $this->load->view("include/js");?>
         </head>
         <body>
         	<header id="header">

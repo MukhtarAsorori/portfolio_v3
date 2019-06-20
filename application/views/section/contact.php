@@ -9,44 +9,61 @@
 	</div>
 	<div class="gap"></div>
 	<div class="container">
-		<?php echo form_open("contact", [ 'onsubmit' => "submit.value = 'Submitting';"]); ?>
-			<?php echo (isset($this->message["success"]) && $this->message["success"] != "") ? '<div class="alert alert-success"><i class="fa fa-check-circle"></i> '.$this->message["success"].'</div>' : "";?>
-			<?php echo (isset($this->message["error"]) && $this->message["error"] != "") ? '<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> '.$this->message["error"].'</div>' : "";?>
-
+		<form id="contact_form">
 			<div class="row">
 				<div class="col-sm-4">
-					<div class="form-group <?php echo isset($this->error['full_name']) ? "has-error" : ''?>">
-						<?php echo form_label('Full Name :', 'full_name'); ?>
-						<?php echo form_input('full_name', set_value("full_name"), [ 'class' =>	"form-control", 'id' =>	"full_name", 'placeholder'	=>	"Enter your Full Name", 'required' => true ]); ?>
-						<span class="error_message"><?php echo (isset($this->error["full_name"])) ? $this->error["full_name"] : ''?></span>
+					<div class="form-group">
+						<label>Full name : </label>
+						<input type="text" class="form-control" name="full_name" id="full_name" required placeholder="Enter your full name">
 					</div>
 				</div>
 				<div class="col-sm-4">
-					<div class="form-group <?php echo isset($this->error['email']) ? "has-error" : ''?>">
-						<?php echo form_label('Email :', 'email'); ?>
-						<?php echo form_input('email', set_value("email"), [ 'class' =>	"form-control", 'id' =>	"email", 'placeholder'	=>	"Enter your Email", 'required' => true ]); ?>
-						<span class="error_message"><?php echo (isset($this->error["email"])) ? $this->error["email"] : ''?></span>
+					<div class="form-group">
+						<label>Email : </label>
+						<input type="text" class="form-control" name="email" id="email" required placeholder="Enter your email">
 					</div>
 				</div>
 				<div class="col-sm-4">
-					<div class="form-group <?php echo isset($this->error['phone']) ? "has-error" : ''?>">
-						<?php echo form_label('Phone :', 'phone'); ?>
-						<?php echo form_input('phone', set_value("phone"), [ 'class' =>	"form-control", 'id' =>	"phone", 'placeholder'	=>	"Enter your Phone", 'required' => true ]); ?>
-						<span class="error_message"><?php echo (isset($this->error["phone"])) ? $this->error["phone"] : ''?></span>
+					<div class="form-group">
+						<label>Phone : </label>
+						<input type="text" class="form-control" name="phone" id="phone" required placeholder="Enter your phone">
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
-					<div class="form-group <?php echo isset($this->error['message']) ? "has-error" : ''?>">
-					  	<?php echo form_label('Message :', 'mssage'); ?>
-						<?php echo form_textarea('message', set_value("message"), [ 'class'	=>	"form-control", 'id' =>	"message", 'placeholder' =>	"Enter your Message", 'required' => true, 'rows' => "5" ]); ?>
-						<span class="error_message"><?php echo (isset($this->error["message"])) ? $this->error["message"] : ''?></span>
+					<div class="form-group">
+						<label>Message</label>
+						<textarea class="form-control" name="message" id="message" required rows="3"></textarea>
 					</div>
 				</div>
 			</div>
-			<?php echo form_submit('submit', 'Submit',['class' => 'btn my_btn_primary']); ?>
-		<?php echo form_close(); ?>
+			<div id="contact_error"></div>
+		</form>
+		<button class="btn my_btn_primary" id="contact_btn">Submit</button>
 	</div>
 	<div class="gap"></div>
 </div>
+<script>
+	$(document).ready(function(){
+		$("#contact_btn").click(function(){
+			if($("#contact_form").valid()){
+				$.ajax({
+					url: "http://api.nfraz.co.in/contact_me",
+					type: "post", 
+					data: $("#contact_form").serialize(),
+					dataType: "json",
+					success: function(response){
+					    console.log(response);
+					    if(response.status){
+					    	$("#contact_error").addClass("alert alert-success").text(response.message);
+					    	setTimeout(() => location.reload(), 5000);
+					    }else{
+					    	$("#contact_error").addClass("alert alert-danger").text(response.message);
+					    }
+					}
+				});
+			}
+		})
+	});
+</script>
