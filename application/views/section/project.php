@@ -26,6 +26,9 @@
 							<?php if($project["project_demo"]){?>
 								<a href="<?php echo $project['project_demo'];?>" class="btn my_btn" target="_blank"><i class="fa fa-laptop"></i>&nbsp; Live Demo</a>
 							<?php }?>
+							<?php if($project["project_video"]){?>
+								<a href="<?php echo $project['project_video'];?>" class="btn my_btn" target="_blank"><i class="fa fa-video-camera"></i>&nbsp; Video</a>
+							<?php }?>
 							<?php echo ($key+1 < count($projects)) ? "<hr>" : "";?>
 						</div>
 					<?php }?>
