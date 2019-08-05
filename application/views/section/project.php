@@ -4,11 +4,17 @@
 		<div class="row">
 			<div class="col-sm-4">
 				<?php $this->load->view("section/section", ["section_value" => "PROJECT"]);?>
+				<div>
+					<label class="radio-inline"><input type="radio" name="filter_project_type" value="" checked>All</label>
+					<label class="radio-inline"><input type="radio" name="filter_project_type" value="PERSONAL">Personal</label>
+					<label class="radio-inline"><input type="radio" name="filter_project_type" value="FREELANCE">Freelance</label>
+					<label class="radio-inline"><input type="radio" name="filter_project_type" value="COMPANY">Company</label>
+				</div>
 			</div>
 			<div class="col-sm-8">
 				<?php if($projects){?>
 					<?php foreach($projects as $key => $project){?>
-						<div>
+						<div data-project_type="<?php echo $project['project_type'];?>">
 							<h4><?php echo $project["project_name"];?></h4>
 							<h4 class="color_text_grey_dark normal"><?php echo ($project["project_type"] != "COMPANY") ? ucwords(strtolower($project["project_type"])) : $project["company_name"];?></h4>
 							<h5 class="color_text_grey_dark"><?php echo $project["start_at_text"];?> - <?php echo $project["end_at_text"];?> <i class="fa fa-circle"></i> <?php echo $project["duration"];?></h5>

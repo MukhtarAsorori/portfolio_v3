@@ -6,6 +6,23 @@ var App = function(){
 		btn_login_submit : this.my_spinner+'Loging In',
 	};
 
+	this.init = function() {
+		self.filter_project_type();
+	};
+
+	this.filter_project_type = function() {
+		$("input[name='filter_project_type']").change(function(){
+			var project_type = $("input[name='filter_project_type']:checked").val();
+			// console.log(project_type);
+			if(project_type){
+				$("div[data-project_type]").hide();
+				$("div[data-project_type='"+project_type+"']").show();
+			}else{
+				$("div[data-project_type]").show();
+			}
+		});
+	}
+
 	this.notify = function(message = "", type = ""){
 		$.notify({
 			// options
@@ -71,3 +88,8 @@ var App = function(){
         return data_table;
 	};
 }
+
+$(document).ready(function(){
+	var app = new App();
+	app.init();
+})
