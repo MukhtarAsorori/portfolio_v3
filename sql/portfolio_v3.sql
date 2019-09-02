@@ -443,3 +443,5 @@ INSERT INTO `nf3_project` (`project_id`, `experience_id`, `project_type`, `proje
 ALTER TABLE `nf3_project` ADD `project_video` TEXT NULL AFTER `project_url`;
 UPDATE nf3_project set project_video="https://www.youtube.com/watch?v=VMX84p3mpaQ" where project_id=17;
 UPDATE nf3_project set project_demo="http://dinvt.nfraz.co.in/" where project_id=17;
+
+UPDATE `nf3_project` SET `project_name` = 'Internshala Lite', `project_demo` = '', `project_url` = 'https://nfraz007.github.io/internshala_lite', `project_detail` = 'I got this project when I was applying to internshala. I had to create a small internshala website in Laravel.', `technology` = 'Laravel,Mysql,HTML,CSS,Bootstrap,Javascript,Jquery,JSON', `start_at` = '2018-01-01 12:00:01', `end_at` = '2018-01-10 12:00:00' WHERE `nf3_project`.`project_id` = 16;
