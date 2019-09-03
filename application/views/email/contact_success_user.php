@@ -161,7 +161,7 @@
 
                                         <div><span style="color:#FFFFFF;"><?php echo $this->profile["phone_text"];?></span></div>
                                         <div><span style="color:#FFFFFF;">Email : </span><a href="mailto:nfraz007@gmail.com" style="color: #f2b632; text-decoration: none;"><?php echo $this->profile["email"];?></a></div>
-                                        <div><span style="color:#FFFFFF;">Website : </span><a href="http://nfraz.co.nf" style="color: #f2b632; text-decoration: none;"><?php echo $this->profile["website"];?></a></div>
+                                        <div><span style="color:#FFFFFF;">Website : </span><a href="http://nfraz.co.in" style="color: #f2b632; text-decoration: none;"><?php echo $this->profile["website"];?></a></div>
 
                                     </td>
                                   </tr>
