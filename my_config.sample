@@ -22,7 +22,7 @@ $HOSTNAME = (PRODUCTION) ? "" : "localhost";
 $USERNAME = (PRODUCTION) ? "" : "root";
 $PASSWORD = (PRODUCTION) ? "" : "root";
 $DATABASE = (PRODUCTION) ? "" : "portfolio_v3";
-$PREFIX   = (PRODUCTION) ? "" : "";
+$PREFIX   = (PRODUCTION) ? "" : "nf3_";
 
 define('HOSTNAME', $HOSTNAME);
 define('USERNAME', $USERNAME);
