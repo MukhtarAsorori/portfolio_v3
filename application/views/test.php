@@ -1,4 +1,4 @@
-<div class="section_test">
+<div class="">
 	<div class="gap"></div>
 	<div class="container">
 		<div class="row">
