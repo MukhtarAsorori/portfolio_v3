@@ -10,3 +10,4 @@ $route['projects'] = 'Home/projects';
 $route['certifications'] = 'Home/certifications';
 $route['blog'] = 'Home/blog';
 $route['contact'] = 'Home/contact';
+$route['test'] = 'Home/test';

@@ -32,7 +32,7 @@ class MY_Controller extends CI_Controller {
 	public function my_view($view_file = "", $data = array()){
 		$this->load->view("include/header", $data);
 
-		if(!in_array(uri_string(), ["", "about-me"])){
+		if(!in_array(uri_string(), ["", "about-me", "test"])){
 			$this->load->view("section/bio_short", $data);
 		}
 		$this->load->view($view_file, $data);

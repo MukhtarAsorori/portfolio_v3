@@ -43,4 +43,20 @@ class Home extends MY_Controller {
 		$data = [];
 		$this->my_view("contact", $data);
 	}
+
+	public function test(){
+		$data = [];
+		$this->load->library("test_library");
+
+		$projects = $this->get_project();
+		foreach($projects as $project){
+			$data["projects"][] = [
+				"project_name" => $project["project_name"],
+				"project_demo" => $project["project_demo"],
+				"project_demo_test" => $this->test_library->url_test($project["project_demo"])
+			];
+		}
+		// echo json_encode($data);die;
+		$this->my_view("test", $data);
+	}
 }
