@@ -7,22 +7,22 @@
 					<thead>
 						<tr>
 							<th>Project Name</th>
-							<th>Demo URL</th>
-							<th>Status Code</th>
+							<th>URL</th>
+							<th>Code</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php if($projects):?>
 							<?php foreach($projects as $project):?>
 								<tr>
-									<td><?php echo $project["project_name"];?></td>
-									<td><?php echo $project["project_demo"];?></td>
-									<td><?php echo $project["project_demo_test"];?></td>
+									<td><?php echo $project["project_name"];?> ( <?php echo $project["project_type"];?> )</td>
+									<td><?php echo $project["project_url"];?></td>
+									<td><?php echo $project["project_url_test"];?></td>
 								</tr>
 							<?php endforeach;?>
 						<?php else:?>
 							<tr>
-								<td>No project found</td>
+								<td colspan="3">No project found</td>
 							</tr>
 						<?php endif;?>
 					</tbody>

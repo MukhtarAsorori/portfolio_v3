@@ -49,12 +49,31 @@ class Home extends MY_Controller {
 		$this->load->library("test_library");
 
 		$projects = $this->get_project();
-		foreach($projects as $project){
-			$data["projects"][] = [
-				"project_name" => $project["project_name"],
-				"project_demo" => $project["project_demo"],
-				"project_demo_test" => $this->test_library->url_test($project["project_demo"])
-			];
+		foreach($projects as $index => $project){
+			if($project["project_demo"]){
+				$data["projects"][] = [
+					"project_name" => $project["project_name"],
+					"project_type" => "demo",
+					"project_url" => $project["project_demo"],
+					"project_url_test" => $this->test_library->url_test($project["project_demo"]),
+				];
+			}
+			if($project["project_url"]){
+				$data["projects"][] = [
+					"project_name" => $project["project_name"],
+					"project_type" => "url",
+					"project_url" => $project["project_url"],
+					"project_url_test" => $this->test_library->url_test($project["project_url"]),
+				];
+			}
+			if($project["project_video"]){
+				$data["projects"][] = [
+					"project_name" => $project["project_name"],
+					"project_type" => "video",
+					"project_url" => $project["project_video"],
+					"project_url_test" => $this->test_library->url_test($project["project_video"]),
+				];
+			}
 		}
 		// echo json_encode($data);die;
 		$this->my_view("test", $data);
