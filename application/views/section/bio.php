@@ -35,7 +35,7 @@
 				<?php }?>
 			</div>
 			<div class="col-sm-6 hidden-xs">
-				<img src="<?php echo asset_url();?>/images/myphoto.jpg" alt="<?php echo $this->profile["full_name"];?>" class="img-responsive pull-right">
+				<img src="<?php echo asset_url();?>/images/myphoto3.jpg" alt="<?php echo $this->profile["full_name"];?>" class="img-responsive pull-right">
 			</div>
 		</div>
 	</div>
