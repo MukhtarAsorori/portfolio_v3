@@ -450,5 +450,5 @@ INSERT INTO `nf3_project` (`project_id`, `experience_id`, `project_type`, `proje
 
 -- version 2.1.6 --
 UPDATE `nf3_profile` SET `designation` = 'Senior Full Stack Developer' WHERE `nf3_profile`.`profile_id` = 1;
-UPDATE `nf3_experience` SET `end_at` = '2019-10-14 12:00:00' WHERE `nf3_experience`.`experience_id` = 5;
+UPDATE `nf3_experience` SET `end_at` = '2019-10-15 12:00:00' WHERE `nf3_experience`.`experience_id` = 5;
 INSERT INTO `nf3_experience` (`experience_id`, `experience_type`, `company_name`, `company_logo`, `company_url`, `designation`, `city`, `country`, `start_at`, `end_at`, `detail`, `experience_status`, `created_at`) VALUES (NULL, 'FULL_TIME', 'Edureka', '', 'https://www.edureka.co/', 'Senior Full Stack Developer', 'Bangalore', 'India', '2019-10-15 12:00:00', NULL, 'Edureka is an online training provider with the most effective learning system in the world. Our team is responsible for handling payment and the admin portal. In terms of technologies, we are very flexible. We generally use CakePHP, phalcon, microservices, node js, express js, koa js, angular js, Kubernetes and many more. As we use microservices, we are not bound to use any specific language. ', '1', '2019-11-22 12:00:00');
